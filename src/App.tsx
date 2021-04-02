@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import styled from 'styled-components'
+
+import { toVW } from '@helpers/methods'
+import { color, screenMax, spaceDt, spaceMb } from '@helpers/styles'
+
+import Header from '@components/Header'
+import Footer from '@components/Footer'
+import StylesGlobal from '@components/StylesGlobal'
+import NavBar from '@components/NavBar'
+import BottomBar from '@components/BottomBar'
+import RepoList from '@components/RepoList'
+
+const AppContainer = styled.div`
+  height: 100vh;
+  background-color: ${color.bg.primary};
+`
+
+const BodyContainer = styled.div`
+  height: calc(100% - ${toVW(100, 'desktop')});
+  color: ${color.text.light};
+  background-color: ${color.bg.black};
+  padding: ${spaceDt(2)} ${spaceDt(3)};
+
+  ${screenMax('lg')} {
+    height: calc(100% - ${toVW(70, 'mobile')});
+    padding: ${spaceMb(2)} ${spaceMb(1)};
+  }
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <StylesGlobal />
+      <Header />
+      <BodyContainer>
+        <NavBar />
+        <RepoList />
+        <BottomBar />
+      </BodyContainer>
+      <Footer />
+    </AppContainer>
   );
 }
 
