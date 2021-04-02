@@ -1,4 +1,4 @@
-import { INTERFACE_SEARCH_QUERY, INTERFACE_SORT_OPTIONS } from '@helpers/types'
+import { INTERFACE_FILTER_OPTIONS, INTERFACE_SEARCH_QUERY, INTERFACE_SORT_OPTIONS } from '@helpers/types'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '@redux-store'
 
@@ -10,6 +10,10 @@ const initialState: INTERFACE_SEARCH_QUERY = {
     o: 'desc',
     s: '',
   },
+  filterOptions: {
+    index: 0,
+    key: 'All',
+  },
   itemsPerPage: 10,
   currentPage: 1,
 };
@@ -20,6 +24,9 @@ export const searchQuery = createSlice({
   reducers: {
     setQuery: (state, action: PayloadAction<string>) => {
       state.q = action.payload
+    },
+    setFilterOptions: (state, action: PayloadAction<INTERFACE_FILTER_OPTIONS>) => {
+      state.filterOptions = action.payload
     },
     setSortOptions: (state, action: PayloadAction<INTERFACE_SORT_OPTIONS>) => {
       state.sortOptions = action.payload
@@ -33,7 +40,7 @@ export const searchQuery = createSlice({
   },
 });
 
-export const { setQuery, setSortOptions, setItemsPerPage, setCurrentPage } = searchQuery.actions
+export const { setQuery, setFilterOptions, setSortOptions, setItemsPerPage, setCurrentPage } = searchQuery.actions
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

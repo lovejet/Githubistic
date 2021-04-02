@@ -43,12 +43,30 @@ const Label = styled.div`
   text-align: end;
   width: ${toVW(150, 'desktop')};
   margin-right: ${spaceDt(2)};
+
+  ${screenMax('lg')} {
+    width: ${toVW(100, 'mobile')};
+    margin-right: ${spaceMb(1)};
+  }
 `
 
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: ${spaceDt(2)};
+  margin-bottom: ${spaceDt(1)};
+  width: 100%;
+
+  ${screenMax('lg')} {
+    margin-bottom: ${spaceMb(1)};
+  }
+`
+
+const Field = styled.div`
+  width: calc(100% - ${toVW(166, 'desktop')});
+
+  ${screenMax('lg')} {
+    width: calc(100% - ${toVW(108, 'mobile')});
+  }
 `
 
 const ExternalLink = styled.a`
@@ -63,4 +81,5 @@ export {
   Label,
   Row,
   ExternalLink,
+  Field,
 }

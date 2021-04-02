@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
 import { color, getTypography, screenMax, spaceDt, spaceMb } from '@helpers/styles'
 
-const SortOptionsBoxContainer = styled.div`
+const LanguageFilterBoxContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -35,4 +35,4 @@ const CustomSelectRenderPrefix = styled.div`
   }
 `
 
-export { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }
+export { LanguageFilterBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }

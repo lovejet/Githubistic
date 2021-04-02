@@ -35,11 +35,12 @@ const RepoList = () => {
 
   useEffect(() => {
     if(searchQuery.q !== '') {
-      const api_url = API_GITHUB_REPO_SEARCH_URL.replace("%1", searchQuery.q)
+      const api_url = API_GITHUB_REPO_SEARCH_URL.replace("%1", searchQuery.q + (searchQuery.filterOptions.index === 0 ? '' : `+language:${searchQuery.filterOptions.key}`))
                                                 .replace("%2", searchQuery.currentPage.toString())
                                                 .replace("%3", searchQuery.itemsPerPage.toString())
                                                 .replace("%4", searchQuery.sortOptions.o)
                                                 .replace("%5", searchQuery.sortOptions.s)
+
       dispatch(fetchRepos(api_url))
     } else {
       dispatch(reseRepoList())

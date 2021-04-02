@@ -91,7 +91,6 @@ const LargeFieldText = styled.div`
 const Language = styled.div`
   position: absolute;
   right: 0;
-  cursor: pointer;
 `
 
 const LanguageText = styled.div`

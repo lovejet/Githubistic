@@ -7,9 +7,15 @@ export interface INTERFACE_SORT_OPTIONS {
   s: string,
 }
 
+export interface INTERFACE_FILTER_OPTIONS {
+  index: number,
+  key: string,
+}
+
 export interface INTERFACE_SEARCH_QUERY {
   q: string,
   sortOptions: INTERFACE_SORT_OPTIONS,
+  filterOptions: INTERFACE_FILTER_OPTIONS,
   itemsPerPage: number,
   currentPage: number,
 }
