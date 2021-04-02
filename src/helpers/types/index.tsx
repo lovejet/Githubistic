@@ -125,6 +125,12 @@ export interface INTERFACE_REPO_LIST {
   error: string | null,
 }
 
+export interface INTERFACE_REPO_DETAIL {
+  data: INTERFACE_REPO_INFO | null,
+  status: "idle" | "loading",
+  error: string | null,
+}
+
 export interface INTERFACE_REPO_RESPONSE {
   total_count: number,
   incomplete_results: boolean,

@@ -12,6 +12,7 @@ import StylesGlobal from '@components/StylesGlobal'
 import NavBar from '@components/NavBar'
 import BottomBar from '@components/BottomBar'
 import RepoList from '@components/RepoList'
+import RepoDetail from '@components/RepoDetail'
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -32,27 +33,25 @@ const BodyContainer = styled.div`
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/repos/:name">
-          <div>
-            lll
-          </div>
-        </Route>
-        <Route path="/">
-          <AppContainer>
-            <StylesGlobal />
-            <Header />
-            <BodyContainer>
-              <NavBar />
-              <RepoList />
-              <BottomBar />
-            </BodyContainer>
-            <Footer />
-          </AppContainer>
-        </Route>
-      </Switch>
-    </Router>
+    <AppContainer>
+      <StylesGlobal />
+      <Header />
+      <BodyContainer>
+        <Router>
+          <Switch>
+            <Route path="/repos/:user/:repo" children={<RepoDetail />} />
+            <Route path="/">
+              <>
+                <NavBar />
+                <RepoList />
+                <BottomBar />
+              </>
+            </Route>
+          </Switch>
+        </Router>
+      </BodyContainer>
+      <Footer />
+    </AppContainer>
   );
 }
 

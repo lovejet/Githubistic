@@ -9,6 +9,7 @@ const MAKE_REV_TOKEN = () => {
 export const APPLICATION_TITLE = 'Githubistic'
 export const APPLICATION_DEVELOPER = 'lovejet'
 export const API_GITHUB_REPO_SEARCH_URL = 'https://api.github.com/search/repositories?q=%1&page=%2&per_page=%3&order=%4&sort=%5'
+export const API_GITHUB_REPO_DETAIL_URL = 'https://api.github.com/repos/%1/%2'
 export const GITHUB_API_DEVELOP_TOKEN = MAKE_REV_TOKEN()
 export const SORT_OPTIONS = [
   {
