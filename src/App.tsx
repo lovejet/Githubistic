@@ -1,6 +1,8 @@
 import './App.css'
 import styled from 'styled-components'
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
 import { toVW } from '@helpers/methods'
 import { color, screenMax, spaceDt, spaceMb } from '@helpers/styles'
 
@@ -30,16 +32,27 @@ const BodyContainer = styled.div`
 
 function App() {
   return (
-    <AppContainer>
-      <StylesGlobal />
-      <Header />
-      <BodyContainer>
-        <NavBar />
-        <RepoList />
-        <BottomBar />
-      </BodyContainer>
-      <Footer />
-    </AppContainer>
+    <Router>
+      <Switch>
+        <Route path="/repos/:name">
+          <div>
+            lll
+          </div>
+        </Route>
+        <Route path="/">
+          <AppContainer>
+            <StylesGlobal />
+            <Header />
+            <BodyContainer>
+              <NavBar />
+              <RepoList />
+              <BottomBar />
+            </BodyContainer>
+            <Footer />
+          </AppContainer>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

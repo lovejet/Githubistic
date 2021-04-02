@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from "react-router-dom"
 import { toVW } from '@helpers/methods'
 import { color, getTypography, screenMax, screenMin, spaceDt, spaceMb } from '@helpers/styles'
 
@@ -25,10 +26,11 @@ const RepoCardContainer = styled.div`
   }
 `
 
-const RepoName  = styled.div`
+const RepoName  = styled(Link)`
   cursor: pointer;
   width: fit-content;
   color: ${color.text.light};
+  text-decoration: none;
   ${getTypography('heading-4')};
 `
 

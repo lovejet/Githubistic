@@ -25,7 +25,7 @@ const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
   return (
     <RepoCardContainer>
       <InfoPane>
-        <RepoName>{repo.name}</RepoName>
+        <RepoName to={`/repos/${repo.name}`}>{repo.name}</RepoName>
         <RepoDescription>{repo.description}</RepoDescription>
       </InfoPane>
       <CountPane>
