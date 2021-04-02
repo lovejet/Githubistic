@@ -48,7 +48,7 @@ const RepoList = () => {
   
   return (
     <RepoListContainer>
-      <TotalUserCount active={repoList.total !== 0}>{repoList.total} user{repoList.total >= 2 ? 's' : ''} found.</TotalUserCount>
+      <TotalUserCount active={repoList.total !== 0}>{repoList.total} repo{repoList.total >= 2 ? 's' : ''} found.</TotalUserCount>
       {renderChild()}
     </RepoListContainer>
   )

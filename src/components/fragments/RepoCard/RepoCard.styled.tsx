@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
-import { color, getTypography, screenMax, spaceDt, spaceMb } from '@helpers/styles'
+import { color, getTypography, screenMax, screenMin, spaceDt, spaceMb } from '@helpers/styles'
 
 const RepoCardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: calc(50% - ${toVW(32, 'desktop')});
+  width: ${toVW(440, 'desktop')};
   height: ${toVW(150, 'desktop')};
-  margin: ${spaceDt(1)} ${spaceDt(2)};
+  margin: ${spaceDt(1)} ${spaceDt(1)};
   background-color: ${color.bg.primary};
   padding: ${spaceDt(2)};
+
+  ${screenMin('lg')} {
+    &:hover {
+      background-color: ${color.bg.hover};
+    }
+  }
 
   ${screenMax('lg')} {
     width: 100%;
@@ -19,10 +25,10 @@ const RepoCardContainer = styled.div`
   }
 `
 
-const RepoName  = styled.a`
+const RepoName  = styled.div`
   cursor: pointer;
+  width: fit-content;
   color: ${color.text.light};
-  text-decoration: none;
   ${getTypography('heading-4')};
 `
 
@@ -52,6 +58,7 @@ const InfoPane = styled.div`
 const CountPane = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
   height: ${toVW(25, 'desktop')};
 
   ${screenMax('lg')} {
@@ -79,6 +86,16 @@ const LargeFieldText = styled.div`
   }
 `
 
+const Language = styled.div`
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+`
+
+const LanguageText = styled.div`
+  color: ${color.bg.secondary};
+`
+
 export {
   RepoCardContainer,
   RepoName,
@@ -86,5 +103,7 @@ export {
   InfoPane,
   CountPane,
   LargeField,
-  LargeFieldText
+  LargeFieldText,
+  Language,
+  LanguageText,
 }

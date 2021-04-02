@@ -14,6 +14,7 @@ const color = {
     light3: '#FFFFFFC0',
     black: '#000',
     danger: '#FF0000',
+    hover: '#1E3E3E',
   },
   accent: {
     1: '#F7F8FA',

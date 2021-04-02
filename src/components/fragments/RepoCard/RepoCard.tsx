@@ -12,7 +12,9 @@ import {
   InfoPane,
   CountPane,
   LargeField,
-  LargeFieldText
+  LargeFieldText,
+  Language,
+  LanguageText
 } from './RepoCard.styled'
 
 const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
@@ -23,7 +25,7 @@ const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
   return (
     <RepoCardContainer>
       <InfoPane>
-        <RepoName href={repo.html_url}>{repo.name}</RepoName>
+        <RepoName>{repo.name}</RepoName>
         <RepoDescription>{repo.description}</RepoDescription>
       </InfoPane>
       <CountPane>
@@ -39,6 +41,12 @@ const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
           <WatchIcon />,
           `${repo.watchers_count}`
         )}
+        <Language>
+          {renderLargeField(
+            null,
+            <LanguageText>{repo.language}</LanguageText>
+          )}
+        </Language>
       </CountPane>
     </RepoCardContainer>
   )

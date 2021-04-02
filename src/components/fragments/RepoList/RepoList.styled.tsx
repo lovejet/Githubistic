@@ -36,7 +36,6 @@ const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-self: center;
   height: calc(100% - ${toVW(25, 'desktop')});
   overflow-x: hidden;
   overflow-y: auto;
