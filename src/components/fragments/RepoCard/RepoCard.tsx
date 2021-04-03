@@ -1,9 +1,9 @@
-import { memo } from 'react'
+import { memo } from "react";
 
-import { INTERFACE_REPO_INFO } from '@helpers/types'
-import StarIcon from '@material-ui/icons/Star'
-import ForkIcon from '@material-ui/icons/CallSplit'
-import WatchIcon from '@material-ui/icons/Visibility'
+import { INTERFACE_REPO_INFO } from "@helpers/types";
+import StarIcon from "@material-ui/icons/Star";
+import ForkIcon from "@material-ui/icons/CallSplit";
+import WatchIcon from "@material-ui/icons/Visibility";
 
 import {
   RepoCardContainer,
@@ -14,13 +14,16 @@ import {
   LargeField,
   LargeFieldText,
   Language,
-  LanguageText
-} from './RepoCard.styled'
+  LanguageText,
+} from "./RepoCard.styled";
 
-const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
+const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO }) => {
   const renderLargeField = (icon: React.ReactNode, text: React.ReactNode) => (
-    <LargeField>{icon}<LargeFieldText>{text}</LargeFieldText></LargeField>
-  )
+    <LargeField>
+      {icon}
+      <LargeFieldText>{text}</LargeFieldText>
+    </LargeField>
+  );
 
   return (
     <RepoCardContainer>
@@ -29,27 +32,15 @@ const RepoCard = ({ repo }: { repo: INTERFACE_REPO_INFO}) => {
         <RepoDescription>{repo.description}</RepoDescription>
       </InfoPane>
       <CountPane>
-        {renderLargeField(
-          <StarIcon />,
-          `${repo.stargazers_count}`
-        )}
-        {renderLargeField(
-          <ForkIcon />,
-          `${repo.forks_count}`
-        )}
-        {renderLargeField(
-          <WatchIcon />,
-          `${repo.watchers_count}`
-        )}
+        {renderLargeField(<StarIcon />, `${repo.stargazers_count}`)}
+        {renderLargeField(<ForkIcon />, `${repo.forks_count}`)}
+        {renderLargeField(<WatchIcon />, `${repo.watchers_count}`)}
         <Language>
-          {renderLargeField(
-            null,
-            <LanguageText>{repo.language}</LanguageText>
-          )}
+          {renderLargeField(null, <LanguageText>{repo.language}</LanguageText>)}
         </Language>
       </CountPane>
     </RepoCardContainer>
-  )
-}
+  );
+};
 
-export default memo(RepoCard)
+export default memo(RepoCard);

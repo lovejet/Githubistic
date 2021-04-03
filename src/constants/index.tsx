@@ -1,89 +1,85 @@
 const reverse = (s: string) => {
   return s.split("").reverse().join("");
-}
+};
 
 const MAKE_REV_TOKEN = () => {
-  return reverse(process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN_REV as string)
-}
+  return reverse(process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN_REV as string);
+};
 
-export const APPLICATION_TITLE = 'Githubistic'
-export const APPLICATION_DEVELOPER = 'lovejet'
-export const API_GITHUB_REPO_SEARCH_URL = 'https://api.github.com/search/repositories?q=%1&page=%2&per_page=%3&order=%4&sort=%5'
-export const API_GITHUB_REPO_DETAIL_URL = 'https://api.github.com/repos/%1/%2'
-export const GITHUB_API_DEVELOP_TOKEN = MAKE_REV_TOKEN()
+export const APPLICATION_TITLE = "Githubistic";
+export const APPLICATION_DEVELOPER = "lovejet";
+export const API_GITHUB_REPO_SEARCH_URL =
+  "https://api.github.com/search/repositories?q=%1&page=%2&per_page=%3&order=%4&sort=%5";
+export const API_GITHUB_REPO_DETAIL_URL = "https://api.github.com/repos/%1/%2";
+export const GITHUB_API_DEVELOP_TOKEN = MAKE_REV_TOKEN();
 export const LANGUGAE_FILTER_OPTIONS = [
   {
     index: 0,
-    key: 'All',
+    key: "All",
   },
   {
     index: 1,
-    key: 'Python',
+    key: "Python",
   },
   {
     index: 2,
-    key: 'Go',
+    key: "Go",
   },
   {
     index: 3,
-    key: 'HTML',
+    key: "HTML",
   },
   {
     index: 4,
-    key: 'R',
+    key: "R",
   },
   {
     index: 5,
-    key: 'Javascript',
+    key: "Javascript",
   },
   {
     index: 6,
-    key: 'Shell',
+    key: "Shell",
   },
   {
     index: 7,
-    key: 'Typescript',
+    key: "Typescript",
   },
   {
     index: 8,
-    key: 'Erlang',
-  }
-]
+    key: "Erlang",
+  },
+];
 export const SORT_OPTIONS = [
   {
     index: 0,
-    key: 'Best match',
-    o: 'desc',
-    s: '',
+    key: "Best match",
+    o: "desc",
+    s: "",
   },
   {
     index: 1,
-    key: 'Most stars',
-    o: 'desc',
-    s: 'stars',
+    key: "Most stars",
+    o: "desc",
+    s: "stars",
   },
   {
     index: 2,
-    key: 'Fewest stars',
-    o: 'asc',
-    s: 'stars',
+    key: "Fewest stars",
+    o: "asc",
+    s: "stars",
   },
   {
     index: 3,
-    key: 'Most forks',
-    o: 'desc',
-    s: 'forks',
+    key: "Most forks",
+    o: "desc",
+    s: "forks",
   },
   {
     index: 4,
-    key: 'Fewest forks',
-    o: 'asc',
-    s: 'forks',
+    key: "Fewest forks",
+    o: "asc",
+    s: "forks",
   },
-]
-export const ITEMS_PER_PAGE = [
-  10,
-  25,
-  50,
-  100,
-]
+];
+export const ITEMS_PER_PAGE = [10, 25, 50, 100];

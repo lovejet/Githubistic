@@ -1,42 +1,41 @@
 const getFormattedDate = (date: Date) => {
-  let year = date.getFullYear()
+  let year = date.getFullYear();
 
-  let month = (1 + date.getMonth()).toString()
-  month = month.length > 1 ? month : '0' + month
+  let month = (1 + date.getMonth()).toString();
+  month = month.length > 1 ? month : "0" + month;
 
-  let day = date.getDate().toString()
-  day = day.length > 1 ? day : '0' + day
-  
-  return month + '/' + day + '/' + year
-}
+  let day = date.getDate().toString();
+  day = day.length > 1 ? day : "0" + day;
+
+  return month + "/" + day + "/" + year;
+};
 
 const getFormattedTime = (date: Date) => {
-  const hoursNumber = date.getHours()
-  let hours = hoursNumber.toString()
-  let am_pm = 'AM'
+  const hoursNumber = date.getHours();
+  let hours = hoursNumber.toString();
+  let am_pm = "AM";
   if (hoursNumber < 10) {
-    hours = '0' + hours
-    am_pm = 'AM'
+    hours = "0" + hours;
+    am_pm = "AM";
   } else if (hoursNumber < 12) {
-    am_pm = 'AM'
-  }
-  else if (hoursNumber === 12) {
-    am_pm = 'PM'
+    am_pm = "AM";
+  } else if (hoursNumber === 12) {
+    am_pm = "PM";
   } else {
-    hours = (hoursNumber - 12).toString()
-    am_pm = 'PM'
+    hours = (hoursNumber - 12).toString();
+    am_pm = "PM";
   }
 
-  let minutes = date.getMinutes().toString()
-  minutes = minutes.length > 1 ? minutes : '0' + minutes
-  
-  return hours + ':' + minutes + ' ' + am_pm
-}
+  let minutes = date.getMinutes().toString();
+  minutes = minutes.length > 1 ? minutes : "0" + minutes;
+
+  return hours + ":" + minutes + " " + am_pm;
+};
 
 const getFormattedDateTime = (date: Date) => {
-  const dateString = getFormattedDate(date)
-  const timeString = getFormattedTime(date)
-  return dateString + ' ' + timeString
-}
+  const dateString = getFormattedDate(date);
+  const timeString = getFormattedTime(date);
+  return dateString + " " + timeString;
+};
 
-export { getFormattedDate, getFormattedTime, getFormattedDateTime }
+export { getFormattedDate, getFormattedTime, getFormattedDateTime };

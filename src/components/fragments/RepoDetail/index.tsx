@@ -1,3 +1,3 @@
-import RepoDetail from './RepoDetail'
+import RepoDetail from "./RepoDetail";
 
-export default RepoDetail
+export default RepoDetail;

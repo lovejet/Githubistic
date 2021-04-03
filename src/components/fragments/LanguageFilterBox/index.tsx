@@ -1,3 +1,3 @@
-import LanguageFilterBox from './LanguageFilterBox'
+import LanguageFilterBox from "./LanguageFilterBox";
 
-export default LanguageFilterBox
+export default LanguageFilterBox;
