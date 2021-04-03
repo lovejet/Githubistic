@@ -1,3 +1,43 @@
+# About Githubistic
+
+The objective is to build a repository search application using the Github repository search API (https://docs.github.com/en/rest/reference/search#search-repositories) that displays the results of a query. The app can query the API directly.
+
+The list should be able to sort by GitHub's default sort key (best match) and number of stars and also should be able to filter by language.
+
+Each result when selected should route to a detailed screen that displays information about the repository. The results should contain the repository name, description, number of stars, language, and the owners name.
+
+## Tech Stack & Libraries
+
+- Typescript
+- React
+- Redux
+- Redux-Toolkit
+- Styled-Components
+- Material-UI
+- Reselect
+
+## CLI
+
+- create-react-app
+- react-app-rewired
+
+## CI/CD
+
+- Vercel
+
+## Deployed URL
+
+- https://githubistic.vercel.app/
+
+## Goal
+
+1. Search Input
+2. Search results
+3. Sort results
+4. Filter results
+5. Detailed Result Page
+6. Responsive Design
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
